@@ -1,0 +1,101 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure body takes full viewport height */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+.container {
+    max-width: 70%; /* Ensure the container can adjust its width */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h2 {
+    color: #007bff; /* Dominant Blue Color */
+    margin-bottom: 20px;
+    text-align: center; /* Center the heading text */
+}
+
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+input{
+    font-size: larger;
+    letter-spacing: 1.5px;
+}
+input, button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+div.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distribute space between buttons */
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    flex: 1; /* Allow buttons to grow equally */
+    margin: 0 5px; /* Add spacing between buttons */
+}
+
+button[type="submit"] {
+    background-color: #28a745; /* Dominant Green Color */
+    color: #fff;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838; /* Darker Green Color */
+}
+
+button[type="reset"] {
+    background-color: #ffc107; /* Accent Yellow Color */
+    color: #000;
+}
+
+button[type="reset"]:hover {
+    background-color: #e0a800; /* Darker Yellow Color */
+}
+
+.message-container {
+    margin: 5px 0;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: center; /* Center align messages */
+}
+
+.message.error {
+    background-color: #f8d7da; /* Light Red Color */
+    color: #721c24; /* Dark Red Color */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+}

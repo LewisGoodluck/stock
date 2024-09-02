@@ -1,0 +1,47 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    background-color: #0062cc;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px; /* Set a fixed width for the sidebar */
+    height: 100vh;
+    margin: 0;
+    background-color: #007bff; /* Blue background */
+    color: white;
+    padding: 20px;
+}
+
+/* Rest of sidebar styles remain the same */
+
+.main-content {
+    flex: 1; /* Main content takes up the remaining space */
+    padding: 20px;
+}

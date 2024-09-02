@@ -1,0 +1,58 @@
+{% extends "master.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/viewProduct.css' %}">
+{% endblock css %}
+{% block content %}
+<h1>All Products</h1>
+        <p>There are {{count}} products registered </p>
+        <p class="total">Estimated revenue is <span class="number">{{totalAmount}}</span></p>
+        {% if messages %}
+            <div class="message-container">
+                {% for message in messages %}
+                    <span class="message {{ message.tags }}">{{ message }}</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <form action="" method="post" class="search">
+            {% csrf_token %}
+            <select name="order" id="">
+                <option value="name">Name</option>
+                <option value="price">Price</option>
+                <option value="quantity">Quantity</option>
+                <option value="last_updated">last added</option>
+            </select>
+            <button type="submit">sort by</button>
+        </form>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+            <th>last added</th>
+            <th colspan="2" style="background-color:#B22222; text-align:center">Action</th>
+        </tr>
+
+        {% for product in product %}
+            <tr>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.amount}}</td>
+                <td>{{product.date}}</td>
+                <td>
+                    <a href="{% url "updateProduct" product.id %}">
+                        <button class="update">update</button>
+                    </a>
+                </td>
+                <td>
+                    <form action="{% url "deleteProduct" product.id %}" method="post">
+                        {% csrf_token %}
+                        <button class="delete">delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}

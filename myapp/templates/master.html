@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/master.css'%}">
+    {% block css %}{% endblock css %}
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <ul>
+                <li><h1><a href="{% url 'dashboard' %}">Dashboard</a><h1></li>
+                <li><a href="{% url "registerProduct" %}">Register Product</a></li>
+                <li><a href="{% url "viewProduct" %}">view Product</a></li>
+                <li><a href="{% url "productOut" %}">Sales</a></li>
+                <li><a href="">Reports</a></li>
+                <li><a href="{% url "logout" %}">Logout</a></li>
+                </ul>
+        </div>
+        <div class="main-content">
+            {% block content %}{% endblock content %}
+        </div>
+    </div>
+</body>
+</html>

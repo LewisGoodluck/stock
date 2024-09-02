@@ -1,0 +1,132 @@
+h1{
+    text-align: center;
+    color:#3b3bcad5;
+}
+p{
+    font-style: italic;
+    color: maroon;
+}
+.total{
+    font-style: normal;
+    letter-spacing: 1px;
+    font-size: larger;
+    color: #3030fc;
+}
+.number{
+    font-weight: bolder;
+    color: #00cc44;
+}
+
+/* Form Styling */
+.search {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin: 20px 0; /* Add margin around the form */
+    padding: 10px; /* Add padding inside the form */
+    border: 1px solid #ddd; /* Light border for form */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background for form */
+}
+
+.search select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 10px; /* Space between select and button */
+    cursor: pointer;
+}
+
+.search button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    background-color: #007bff; /* Blue background */
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.search button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    font-size: larger;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f0f0f0;
+}
+
+button a {
+    font-size: larger;
+    text-decoration: none;
+    display: inline-block;
+    transition:transform 0.3s ease;
+}
+
+button a:hover {
+    transform: scale(1.1);
+}
+
+button{
+    border: 1px solid;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+       
+}
+
+.update {
+    background-color: #00cc44; /* Green fill on hover */
+}
+
+.delete {
+    background-color: #ff3333; /* Red fill on hover */
+}
+
+button.update a,
+button.delete a {
+    color: white; /* Ensure the link text turns white on hover */
+}
+
+.message-container {
+    margin: 5px 0;
+}
+
+.message {
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: center; /* Center align messages */
+}
+
+.message.success {
+    background-color: #d4edda; /* Light Green Color */
+    color: red; /* Dark Green Color */
+}

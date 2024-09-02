@@ -1,0 +1,23 @@
+/* Base Styles */
+.container {
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-direction: column; /* Arrange elements vertically */
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .main-content {
+        margin-top: 60px; /* Adjust if needed */
+    }
+}

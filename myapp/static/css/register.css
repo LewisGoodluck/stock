@@ -1,0 +1,94 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh; /* Full viewport height */
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+h1 {
+    color: #007bff; /* Dominant Blue Color */
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+input[type="submit"],
+button {
+    background-color: #28a745; /* Dominant Green Color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+button[type="reset"] {
+    background-color: #ffc107; /* Accent Yellow Color */
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #218838; /* Darker Green Color */
+}
+
+button[type="reset"]:hover {
+    background-color: #e0a800; /* Darker Yellow Color */
+}
+
+.errorlist {
+    color: #dc3545; /* Accent Red Color */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.errorlist li {
+    margin-bottom: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+        margin: 0px 5px;
+    }
+}

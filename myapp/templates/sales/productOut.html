@@ -1,0 +1,53 @@
+{% extends "master.html" %}
+{% load static %}
+{% block title %}sales{% endblock title %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/productOut.css'%}">
+{% endblock css %}
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="name">name:</label>
+        <input type="text" name="soldName" id="name" onkeyup="fetchSuggestions()">
+
+        <label for="quantity">quantity</label>
+        <input type="number" name="soldQuantity" id="quantity">
+
+        <input type="submit" value="sell now">
+    </form>
+
+    <ul id="suggestions"></ul> <!-- This is where suggestions will appear -->
+
+    <script>
+        function fetchSuggestions() {
+            const query = document.getElementById('name').value;
+            if (query.length > 0) {
+                fetch('/search/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{ csrf_token }}'
+                    },
+                    body: JSON.stringify({ query: query })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    let suggestions = document.getElementById('suggestions');
+                    suggestions.innerHTML = '';
+                    data.forEach(item => {
+                        let li = document.createElement('li');
+                        li.innerText = item;
+                        suggestions.appendChild(li);
+                    });
+                });
+            } else {
+                document.getElementById('suggestions').innerHTML = '';
+            }
+        }
+    </script>
+{% endblock content %}
