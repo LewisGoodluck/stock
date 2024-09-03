@@ -140,6 +140,8 @@ def productOut(request):
                     name = name_of_product,
                     quantityOut = quantity_of_product
                 )
+
+                messages.success(request,"product sold successfully")
                 context = {"productData":getProduct}
         except Products.DoesNotExist:
             messages.error(request,"product does not exist")
